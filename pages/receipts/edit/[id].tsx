@@ -93,7 +93,7 @@ const SingleReceiptPage = () => {
                   ) : (
                     <Formik
                         initialValues={initialReceipt}
-                        validationSchema={receiptsValidator.updateReceiptSchema}
+                        //validationSchema={receiptsValidator.updateReceiptSchema}
                         onSubmit={handleSubmit}
                         enableReinitialize
                     >

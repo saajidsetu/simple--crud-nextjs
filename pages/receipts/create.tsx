@@ -74,7 +74,7 @@ const CreateReceiptPage = () => {
                         <Card sx={{ p: 3 }} elevation={6}>
                             <Formik
                                 initialValues={initialReceipt}
-                                // validationSchema={createReceiptSchema}
+                                validationSchema={createReceiptSchema}
                                 onSubmit={handleSubmit}
                                 enableReinitialize
                             >
@@ -89,13 +89,14 @@ const CreateReceiptPage = () => {
                                                     label="Main Categories"
                                                     value={formProps.values.rate}
                                                     onChange={(event: any) => formProps.setFieldValue('rate', event.target.value)}
-                                                >
+                                                  >
                                                     {rateList.map((rate, index) => (
                                                         <MenuItem key={index} value={rate}>
                                                             {rate}
                                                         </MenuItem>
                                                         
                                                     ))}
+                                                    console.log(rate);
                                                 </Select>
                                             </FormControl>       
                                              <TextInput
@@ -130,15 +131,15 @@ const CreateReceiptPage = () => {
                                                
                                             </Grid>
                                            <CheckBox
-                                                field_name="publish"
+                                                field_name="check"
                                                 formProps={formProps}
-                                                label="Publish"
-                                                checked={formProps.values.publish}
+                                                label="Checked"
+                                                checked={formProps.values.check}
                                             />              
                                             <Button type="submit" variant="contained">
                                                 Create Vehicle Rate
                                             </Button>
-											{/* <pre>{ JSON.stringify( formProps.values, null, 3) }</pre> */}
+											<pre>{ JSON.stringify( formProps.values, null, 3) }</pre>
                                         </Form>
                                     );
                                 }}
