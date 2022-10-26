@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Welcome Email</title>
+  <style>
+      * {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: none;
+        width: 100% !important;
+        height: 100%;
+        line-height: 1.6em;
+        background-color: #f6f6f6;
+      }
+      a {
+        color:#D2235C;
+        text-decoration: underline;
+      }
+      p {
+        margin-bottom: 10px;
+        font-weight: normal;
+        margin-left: 5px;
+        list-style-position: inside;
+      }
+
+      .body-wrap {
+        background-color: #f6f6f6;
+        width: 100%;
+      }
+      .container {
+        display: block !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        /* makes it centered */
+        clear: both !important;
+      }
+      .content {
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+        padding: 20px;
+      }
+  </style>    
+</head>
+<body>
+  <div class="body-wrap"> 
+    <div class="container content"> 
+        <p>Hello {{name}}, </p>
+        <p>We're glad to have you on board at {{company}}. </p>
+    </div>
+  </div>
+</body>
+</html>

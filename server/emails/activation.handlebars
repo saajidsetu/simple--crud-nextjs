@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>You are almost there!</title>
+  <style>
+      * {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: none;
+        width: 100% !important;
+        height: 100%;
+        line-height: 1.6em;
+        background-color: #f6f6f6;
+      }
+      a {
+        color:#D2235C;
+        text-decoration: underline;
+      }
+      p {
+        margin-bottom: 10px;
+        font-weight: normal;
+        margin-left: 5px;
+        list-style-position: inside;
+      }
+
+      .body-wrap {
+        background-color: #f6f6f6;
+        width: 100%;
+      }
+      .container {
+        display: block !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+        /* makes it centered */
+        clear: both !important;
+      }
+      .content {
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+        padding: 20px;
+      }
+  </style>    
+</head>
+<body>
+  <div class="body-wrap"> 
+    <div class="container content"> 
+        {{!-- <p>Hi {{name}}, </p> --}}
+        {{!-- <p>Thank you for creating your account on {{company}} Member Lounge! <br> Someone from our team will activate your account shortly. </p> --}}
+        {{!-- <p>Thank you, <br> The {{company}} Member Lounge Team </p> --}}
+        <div id="body"></div>
+    </div>
+  </div>
+
+  <script>
+      // const api_url = process.env.NEXT_PUBLIC_API_BASE;
+
+      // api url
+        const api_url = 
+              "http://localhost:5000/api/emails";
+
+        // Defining async function
+        async function getapi(url) {
+
+            // Storing response
+            const response = await fetch(url);
+
+            // Storing data in form of JSON
+            var data = await response.json();
+            console.log(data);
+            show(data);
+        }
+        // Calling that async function
+        getapi(api_url);
+
+        // Function to define innerHTML for HTML table
+        function show(data) {
+            let descriptionBody = 
+                `<p>${data[0].description}</p>`;
+            }
+            // Setting innerHTML as tab variable
+            document.getElementById("body").innerHTML = descriptionBody;
+        }
+  </script>
+</body>
+</html>
